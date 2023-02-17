@@ -1,12 +1,11 @@
-#!/bin/bash
 #include <stdio.h>
 /**
- * main - Hello printf
+ *main - Hello printf
  *
- * Return: Always 0
- * /
- int main(0)
+ *Return: Always 0
+ */
+int main(0)
 {
- 	printf("with proper grammar, but the outcome is a piece of art,\n");
+	printf("with proper grammar, but the outcome is a piece of art,\n");
 	return (0);
 }
