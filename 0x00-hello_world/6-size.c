@@ -1,4 +1,4 @@
-#include <stdio>
+#include <stdio.h>
 /**
  * main - various types
  *
@@ -10,7 +10,7 @@ int a;
 long int b;
 long long int c;
 float d;
-char e
+char e;
 
 printf("Size of a chart : %lu byte(s)\n", (unsigned long)sizeof(e))
 printf("Size of an int: %lu byte(s)\n", (unsigned long)sizeof(a))
