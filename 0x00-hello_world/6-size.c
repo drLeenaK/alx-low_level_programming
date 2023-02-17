@@ -1,10 +1,21 @@
-#!/bin/bash
 #include <stdio>
 /**
  * main - various types
  *
  * Return: Always 0
- * /
- int main(void)
- {
- 	int a:char; int b:int; int c:long long; int d:float
+ */
+int main(void)
+{
+int a;
+long int b;
+long long int c;
+float d;
+char e
+
+printf("Size of a chart : %lu byte(s)\n", (unsigned long)sizeof(e))
+printf("Size of an int: %lu byte(s)\n", (unsigned long)sizeof(a))
+printf("Size of an long int: %lu byte(s)\n", (unsigned long)sizeof(b))
+printf("Size of an long long int: %lu byte(s)\n", (unsigned long)sizeof(c))
+printf("Size of an float: %lu byte(s)\n", (unsigned long)sizeof(d))
+return (0);
+}
