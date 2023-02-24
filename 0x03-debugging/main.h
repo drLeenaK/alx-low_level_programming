@@ -1,16 +1,10 @@
-#ifndef HEADER_FILE
-#define HEADER_FILE
-
+#ifndef MAIN_H
+#define MAIN_H
 #include <stdio.h>
 
-/**
- * positive_or_negative - tests whether + or -
- * @i: will be checked
- *
- * Description: Declarations for all functions that will be used
- */
 void positive_or_negative(int i)
 int largest_number(int a, int b, int c)
-
+void print_remaining_days(int month, int day, int year)
+int main(void)
 
 #endif
