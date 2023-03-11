@@ -9,18 +9,24 @@
 
 int main(int argc, char *argv[])
 {
-	int i, j, result;
+	int i, sum = 0;
 
-	if (argc != 3)
+	for (i = 1; i < argc; i++)
 	{
-		printf("Error\n");
-		return (1);
-	}
-	i = atoi(argv[1]);
-	j = atoi(argv[2]);
-	result = i + j;
-	printf("%d\n", result);
+		char *p = argv[1];
 
-	else
-		printf("0\n");
+		while (*p)
+		{
+			if (!isdigit(*p))
+			{
+				printf("Error\n");
+				return (1);
+			}
+			p++;
+		}
+		sum += atoi(argv[i]);
+	}
+	printf("Total = %d\n", sum);
+	}
 	return (0);
+}
