@@ -1,7 +1,9 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include <ctype.h>
 /**
  * main - printing a name followed by a new  line
+ * Description: adds two positive numbers
  * @argc: count commands
  * @argv: vector commands
  * Return: 0 success
