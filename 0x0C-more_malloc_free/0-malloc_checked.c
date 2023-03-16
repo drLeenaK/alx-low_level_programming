@@ -13,16 +13,17 @@ void *malloc_checked(unsigned int b)
 {
 	int *b;
 
-	b = malloc(sizeof(*b));
-	printf("%d\n", b);
+	b = malloc(sizeof(b));
 }
 /**
  * malloc_checked - allocates memory
- *
+ * @b: initialize the interger
  * Return: 98 fails
  */
 void *malloc_checked(unsigned int b)
 {
-	m(b);
-	return (98);
+	if (b == NULL)
+	exit(98);
+
+	return (b);
 }
