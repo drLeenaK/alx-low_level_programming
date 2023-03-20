@@ -3,12 +3,15 @@
 #define ABS(x) (x >= 0 ? (x) : (-x))
 
 /**
-int _abs(int x)
+ * main - checks the code
+ *
+ * Return: 0 success
+ */
+
+int main(void)
 {
 	if (x >= 0)
 		return (x);
 	else
 		return (-x);
 }
-*/
-#endif
