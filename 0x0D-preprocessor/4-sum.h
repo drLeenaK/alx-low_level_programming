@@ -1,14 +1,12 @@
 #ifndef _3_FUNCTION_LIKE_MACRO_H_
 #define _3_FUNCTION_LIKE_MACRO_H_
-#define ABS(x) (x >= 0 ? (x) : (-x))
+#define SUM(x, y) (x + y)
 
-/**
 int _abs(int x)
 {
 	if (x >= 0)
-		return (x);
+		return (i);
 	else
-		return (-x);
+		return (-i);
 }
-*/
 #endif
