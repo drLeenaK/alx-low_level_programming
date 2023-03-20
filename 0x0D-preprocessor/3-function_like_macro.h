@@ -10,8 +10,12 @@
 
 int main(void)
 {
-	if (x >= 0)
-		return (x);
-	else
-		return (-x);
+	int i;
+	int j;
+
+	i = ABS(-98) * 10;
+	j = ABS(98) * 10;
+	printf("%d, %d\n", i, j);
+
+	return (0);
 }
