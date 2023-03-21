@@ -4,12 +4,12 @@
 #include <stdio.h>
 
 /**
- * struct dog - structure for dog
- * @name: pointer for name
- * @age: dog's age
- * @owner: who owns it
+ * struct dog - structure details for dog
+ * @name: name of teh dog
+ * @age: the age of the dog
+ * @owner: the owner of the dog
  *
- * Description: none
+ * Description: description of the dog
  */
 
 struct dog
