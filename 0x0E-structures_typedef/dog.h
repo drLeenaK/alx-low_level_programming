@@ -24,5 +24,6 @@ dog_t *new_dog(char *name, float age, char *owner);
 void free_dog(dog_t *d);
 int _putchar(char);
 typedef struct dog dog_t;
+int main(void);
 
 #endif
