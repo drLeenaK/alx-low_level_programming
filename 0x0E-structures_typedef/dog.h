@@ -1,27 +1,19 @@
-#ifndef "main.h"
-#define "main.h"
+#ifndef _MAIN_H_
+#define _MAIN_H_
 
 /**
- * init_dog - description of a dog
- * @d: type
- * @name: name of the dog
+ * struct dog - description of a dog
+ * @type: kind of dog
  * @owner: owner of the dog
  * @age: age of the dog
  *
  * Description: Longer description
  */
 
-void init_dog(struct dog *d, char *name, float age, char *owner)
+struct dog
 {
 	char *type;
-	float *age;
+	float age;
 	char *owner;
 };
-
-int main(void)
-{
-	struct dog;
-
-	return (0);
-}
-
+#endif
