@@ -1,10 +1,10 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "3-calc.h"
-#include <string.h>
 /**
- * get_op_func - selects the correct function to perform the operation
- * @s: the operator passed to the function
- * Return: nothing
+ * get_op_func - gets the right func
+ * @s: function s
+ * Return: int value
  */
 int (*get_op_func(char *s))(int, int)
 {
@@ -16,14 +16,16 @@ int (*get_op_func(char *s))(int, int)
 		{"%", op_mod},
 		{NULL, NULL}
 	};
-	int i;
+	int index;
 
-	i = 0;
-	while (i < 5)
+	index = 0;
+	while (ops[index].f != NULL)
 	{
-		if (strcmp(s, ops[i].op) == 0)
-			return (ops[i].f);
-		i++;
+		if (*s == *(ops[index].op) && s[1] == '\0')
+			return (ops[index].f);
+		index++;
 	}
-	return (NULL);
+
+	printf("Error\n");
+	exit(99);
 }

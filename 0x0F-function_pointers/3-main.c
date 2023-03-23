@@ -3,33 +3,29 @@
 #include "3-calc.h"
 /**
  * main - main function
- * @argc: the argument counter
- * @argv: the array of arguments
- * Return: 0 if successful
+ * @argc: arguments
+ * @argv: array of args
+ * Return: return something
  */
 int main(int argc, char *argv[])
 {
-
-	int a, b, c;
-	int (*p)(int, int);
-
-	if (argc != 4)
+	if (argc == 4)
 	{
-		printf("Error\n");
-		exit(98);
+		int a;
+		int b;
+		int (*func)(int, int);
+
+		a = atoi(argv[1]);
+		b = atoi(argv[3]);
+		func = get_op_func(argv[2]);
+		if ((*argv[2] == '%' || *argv[2] == '/') && b == 0)
+		{
+			printf("Error\n");
+			exit(100);
+		}
+		printf("%d\n", func(a, b));
+		return (0);
 	}
-
-	a = atoi(argv[1]);
-	b = atoi(argv[3]);
-
-	p = get_op_func(argv[2]);
-	if (p == NULL)
-	{
-		printf("Error\n");
-		exit(99);
-	}
-	c = (*p)(a, b);
-
-	printf("%d\n", c);
-	return (0);
+	printf("Error\n");
+	exit(98);
 }

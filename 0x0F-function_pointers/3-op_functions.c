@@ -1,29 +1,54 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "3-calc.h"
-#include <string.h>
 /**
- * get_op_func - selects the correct function to perform the operation
- * @s: the operator passed to the function
- * Return: nothing
+ * op_add - adds 5 functions
+ * @a: int a
+ * @b: int b
+ * Return: sum of a and b
  */
-int (*get_op_func(char *s))(int, int)
+int op_add(int a, int b)
 {
-	op_t ops[] = {
-		{"+", op_add},
-		{"-", op_sub},
-		{"*", op_mul},
-		{"/", op_div},
-		{"%", op_mod},
-		{NULL, NULL}
-	};
-	int i;
+	return (a + b);
+}
+/**
+ * op_sub - subtracts
+ * @a: int a
+ * @b: int b
+ * Return: difference
+ */
+int op_sub(int a, int b)
+{
+	return (a - b);
+}
+/**
+ * op_mul - multiplies
+ * @a: int a
+ * @b: int b
+ * Return: multipliy
+ */
+int op_mul(int a, int b)
+{
+	return (a * b);
+}
+/**
+ * op_div - division
+ * @a: int a
+ * @b: int b
+ * Return: division
+ */
+int op_div(int a, int b)
+{
+	return (a / b);
+}
+/**
+ * op_mod - modulos
+ * @a: int a
+ * @b: int b
+ * Return: modulo of ints
+ */
 
-	i = 0;
-	while (i < 5)
-	{
-		if (strcmp(s, ops[i].op) == 0)
-			return (ops[i].f);
-		i++;
-	}
-	return (NULL);
+int op_mod(int a, int b)
+{
+	return (a % b);
 }
