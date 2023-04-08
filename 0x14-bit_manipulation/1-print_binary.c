@@ -10,8 +10,6 @@
 void print_binary(unsigned long int n);
 
 {
-	unsigned int n = 0;
-
 	for (int i = sizeof(unsigned long int); i >= 0; i--)
 	{
 		print_binary("%d\n", n >> i & 1);
