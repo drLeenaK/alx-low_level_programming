@@ -18,5 +18,5 @@ unsigned int binary_to_uint(const char *b)
 	{
 		uint += (binary[len - i - 1] - '0') * pow(2, i);
 	}
-	return uint;
+	return (uint);
 }
