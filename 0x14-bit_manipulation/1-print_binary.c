@@ -7,11 +7,11 @@
  * @n: a binary number
  */
 
-void print_binary(unsigned long int n);
+void print_binary(unsigned long int n)
 
 {
-	for (int i = sizeof(unsigned long int); i >= 0; i--)
+	if (n > 1)
 	{
-		print_binary("%d\n", n >> i & 1);
+		print_binary(n / 2);
 	}
 }
