@@ -12,11 +12,18 @@
 unsigned int binary_to_uint(const char *b)
 {
 	unsigned int uint = 0;
-	int len = strlen(binary);
+	int len = strlen(b);
 
 	for (int i = 0; i < len; i++)
 	{
-		uint += (binary[len - i - 1] - '0') * pow(2, i);
+		if (b[i] == '0' || b[i] == '1')
+		{
+		uint = uint * 2 + (b[i] - '0');
+		return (uint);
+		}
+		else
+		{
+			return (NULL);
+		}
 	}
-	return (uint);
 }
