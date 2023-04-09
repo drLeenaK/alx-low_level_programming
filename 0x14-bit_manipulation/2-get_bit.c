@@ -10,17 +10,7 @@
  */
 
 int get_bit(unsigned long int n, unsigned int index)
+
 {
-	unsigned int counter = 0;
-
-	int *tmp;
-
-	tmp = n;
-
-	if (counter != index, counter++)
-	{
-		tmp = tmp->next;
-	}
-
-	return (tmp);
+	return ((n & (1 << index)) != 0);
 }
