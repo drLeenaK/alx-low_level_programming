@@ -5,43 +5,47 @@
 /**
  * read_textfile - function that reads a text file
  * and prints it to the POSIX standard output
- * @filename: name of a file
+ * @filename: name of a file to be read
  * @letters: string of characters
- * Return: the actual number of letters it could read and print
+ * Return: the actual number of letters(bytes) it could read and print
+ * if the file can not be opened or read, return 0
+ * if filename is NULL return 0
+ * if write fails or does not write the expected amount of bytes, return 0
  */
 
 ssize_t read_textfile(const char *filename, size_t letters)
 {
+	char *buf;
+
+	buf = malloc(letters);
+	FILE *fp
+
+	ssize_t t;
+
 	if (filename == NULL)
 	{
 		return (0);
 	}
 
-	FILE *file = fopen(filename, "r");
-
-	if (file == NULL)
+	fp = fopen(filename, "r");
+	if (fp == NULL)
 	{
-		return (0);
+		return (-1);
 	}
-
-	char *buffer = (char *) malloc(letters * sizeof(char));
-
-	if (buffer == NULL)
+	if (buf == NULL)
 	{
-		fclose(file);
-		return (0);
+		fclose(fp);
+		return (-1);
 	}
-
-	ssize_t read_textfile = fread(buffer, sizeof(char), letters, file);
-
-	if (read_textfile <= 0 || write(STDOUT_FILENO, buffer, read_textfile) != read_textfile)
+	t = fread(buf, 1, letters, fp);
+	if (ferror(fp))
 	{
-		free(buffer);
-		fclose(file);
-		return (0);
+		free(buf);
+		fclose(fp);
+		return (-1);
 	}
-	free(buffer);
-	fclose(file);
-
-	return (read_textfile);
+	fwrite(buf, 1, t, stdout);
+	free(buf);
+	fclose(fp);
+	return (t);
 }
